@@ -1,0 +1,91 @@
+
+.puppy-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffebc5;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 35px,
+      rgba(160, 110, 65, 0.15) 36px,
+      transparent 38px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 35px,
+      rgba(160, 110, 65, 0.15) 36px,
+      transparent 38px
+    );
+
+  animation: loaderFade 0.3s ease;
+}
+
+.loader-content {
+  position: relative;
+  text-align: center;
+}
+
+.loader-dog {
+  font-size: 85px;
+  animation: puppyBounce 0.7s ease-in-out infinite alternate;
+}
+
+.loader-content h2 {
+  color: #984318;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.paw {
+  position: absolute;
+  font-size: 22px;
+  color: #c98254;
+  animation: pawMove 1.2s infinite;
+}
+
+.paw-one {
+  left: -55px;
+  top: 65px;
+}
+
+.paw-two {
+  left: -5px;
+  top: 30px;
+  animation-delay: 0.4s;
+}
+
+@keyframes puppyBounce {
+  from {
+    transform: translateY(0) rotate(-5deg);
+  }
+  to {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes pawMove {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes loaderFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
